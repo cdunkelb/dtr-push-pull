@@ -20,7 +20,7 @@ TOKEN=$3
 
 #Get a list of repos
 echo "INFO: Getting list of repos"
-curl -u $ADMIN_USER:$TOKEN -X GET "https://$DTR_HOST/api/v0/repositories?pageSize=1000" -H "accept: application/json" > docker-repos.json
+curl -k -u $ADMIN_USER:$TOKEN -X GET "https://$DTR_HOST/api/v0/repositories?pageSize=1000" -H "accept: application/json" > docker-repos.json
 
 echo "INFO: cleaning up any old repo-tags.txt files..."
 rm repo-tags.txt
